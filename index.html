@@ -5,5 +5,289 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="صفحه معرفی فاوندر — معرفی، پروژه‌ها و راه‌های ارتباطی" />
   <title>نام شما — Founder</title>
-  ...
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="نام شما — Founder" />
+  <meta property="og:description" content="سایت معرفی شخصی فاوندر: پروژه‌ها، مهارت‌ها و راه‌های ارتباطی." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fa_IR" />
+
+  <style>
+    /* ====== Basic Reset ====== */
+    :root{
+      --bg:#0f1724;      /* dark navy */
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#7dd3fc;  /* light cyan */
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.03);
+      --radius:14px;
+      --maxwidth:980px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--bg) 0%, #071226 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:28px;
+      display:flex;
+      justify-content:center;
+    }
+
+    /* ====== Layout ====== */
+    .wrap{
+      width:100%;
+      max-width:var(--maxwidth);
+    }
+    header{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      margin-bottom:22px;
+    }
+    .avatar{
+      width:86px;
+      height:86px;
+      border-radius:16px;
+      background:linear-gradient(135deg,#0ea5a5,#06b6d4);
+      display:grid;
+      place-items:center;
+      font-weight:700;
+      font-size:30px;
+      color:#022;
+      box-shadow: 0 6px 20px rgba(2,6,23,0.6);
+      flex-shrink:0;
+    }
+    .header-info h1{
+      margin:0;
+      font-size:20px;
+      letter-spacing:0.2px;
+    }
+    .header-info p{margin:6px 0 0 0;color:var(--muted);font-size:14px}
+
+    /* ====== Card ====== */
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+      border:1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(6px);
+    }
+
+    main{display:grid;gap:16px}
+    .grid{
+      display:grid;
+      gap:16px;
+    }
+    /* two-column on wide screens */
+    @media(min-width:900px){
+      .grid{grid-template-columns: 1fr 320px}
+    }
+
+    /* About */
+    .about p{color:var(--muted);line-height:1.6;margin:0}
+
+    /* Skills / Tags */
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{
+      background:var(--glass);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:13px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    /* Projects */
+    .projects{display:flex;flex-direction:column;gap:10px}
+    .proj{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:12px;
+      border-radius:12px;
+      background:linear-gradient(180deg,var(--glass),var(--glass-2));
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .proj .meta{font-size:13px;color:var(--muted)}
+    .proj h3{margin:0 0 6px 0;font-size:15px}
+
+    /* Right column */
+    .side{display:flex;flex-direction:column;gap:12px}
+    .panel{padding:12px;border-radius:12px;background:linear-gradient(180deg,var(--card),#071425);border:1px solid rgba(255,255,255,0.03)}
+    .contact a{display:inline-block;margin-bottom:8px;color:var(--accent);text-decoration:none}
+    .socials{display:flex;gap:10px;margin-top:8px}
+    .socials a{padding:8px;border-radius:10px;background:rgba(255,255,255,0.02);text-decoration:none;color:var(--muted);font-size:14px}
+
+    /* Footer */
+    footer{margin-top:14px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* subtle hover */
+    a:hover{opacity:0.92}
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:10px;
+      background:linear-gradient(90deg,var(--accent),#60a5fa);
+      color:#022;
+      font-weight:600;
+      text-decoration:none;
+      box-shadow: 0 6px 18px rgba(7,9,26,0.6);
+    }
+
+    /* small visual flourish */
+    .badge{
+      display:inline-block;
+      padding:6px 10px;
+      background:rgba(0,0,0,0.4);
+      border-radius:999px;
+      font-size:12px;color:var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="avatar" id="avatar">ش</div> <!-- حرف اول اسم -->
+      <div class="header-info">
+        <h1 id="name">نام شما — Founder</h1>
+        <p id="role">استارتاپ‌فاندر · توسعه‌دهنده · علاقه‌مند به گیم و سیستم</p>
+      </div>
+      <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+        <span class="badge">موقعیت: ایران</span>
+      </div>
+    </header>
+
+    <main class="card">
+      <div class="grid">
+        <!-- اصلی (سمت چپ) -->
+        <section>
+          <div class="about">
+            <h2 style="margin:0 0 8px 0">معرفی کوتاه</h2>
+            <p id="aboutText">
+              سلام! من یک فاوندر و توسعه‌دهنده هستم که روی پروژه‌های وب، گیم و ابزارهای سیستم کار می‌کنم.
+              این صفحه برای نمایش پروژه‌ها، مهارت‌ها و راه‌های ارتباطی من است. متن را جایگزین کن.
+            </p>
+
+            <div class="tags" aria-hidden="true" style="margin-top:12px">
+              <div class="tag">JavaScript</div>
+              <div class="tag">Node.js</div>
+              <div class="tag">React</div>
+              <div class="tag">Python</div>
+              <div class="tag">Games</div>
+              <div class="tag">DevOps</div>
+            </div>
+          </div>
+
+          <hr style="margin:18px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+
+          <div>
+            <h2 style="margin:0 0 8px 0">پروژه‌ها</h2>
+            <div class="projects">
+              <article class="proj">
+                <div style="flex:1">
+                  <h3>Project One — ابزار مدیریت</h3>
+                  <div class="meta">Tech: Node · Electron · CLI</div>
+                  <p style="margin:8px 0 0;color:var(--muted);font-size:14px">توضیحات کوتاه پروژه — لینک و دمو را اضافه کن.</p>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end">
+                  <a class="btn" href="#" target="_blank" rel="noopener">گیت‌هاب</a>
+                </div>
+              </article>
+
+              <article class="proj">
+                <div style="flex:1">
+                  <h3>Project Two — سایت/اپ</h3>
+                  <div class="meta">Tech: React · Vercel</div>
+                  <p style="margin:8px 0 0;color:var(--muted);font-size:14px">توضیح کوتاه دربارهٔ هدف و وضعیت پروژه.</p>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end">
+                  <a class="btn" href="#" target="_blank" rel="noopener">سایت</a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- سایدبار (سمت راست) -->
+        <aside class="side">
+          <div class="panel">
+            <h3 style="margin:0 0 8px 0">تماس</h3>
+            <div class="contact">
+              <a id="emailLink" href="mailto:example@example.com">📧 example@example.com</a><br>
+              <a id="phoneLink" href="tel:+98-912-0000000">📞 +98 912 000 0000</a>
+              <div style="margin-top:10px">
+                <a class="btn" href="#" id="cvBtn">دانلود رزومه</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3 style="margin:0 0 8px 0">شبکه‌ها</h3>
+            <div class="socials">
+              <a id="github" href="#" target="_blank" rel="noopener">GitHub</a>
+              <a id="linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+              <a id="twitter" href="#" target="_blank" rel="noopener">X / Twitter</a>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3 style="margin:0 0 8px 0">مهارت‌ها</h3>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div class="meta">Fullstack Web · Backend · Infra</div>
+              <div class="meta">Game Dev · Tooling</div>
+              <div class="meta">Open-source contributor</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <footer>
+        © <span id="year"></span> نام شما — ساخته شده با ❤️ · برای تغییرات سریع کافیست فایل index.html را ویرایش کنی.
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // ====== شخصی‌سازی سریع (این مقادیر را عوض کن) ======
+    const profile = {
+      name: "نام شما",
+      role: "Founder · Developer",
+      about: "من یک فاوندر و توسعه‌دهندهٔ وب و گیم هستم. علاقه‌مند به ابزارسازی، بازی و سیستم‌های مقیاس‌پذیر. این متن را با معرفی خودت عوض کن.",
+      email: "you@example.com",
+      phone: "+98-912-0000000",
+      github: "https://github.com/yourusername",
+      linkedin: "https://www.linkedin.com/in/yourprofile",
+      twitter: "https://twitter.com/yourhandle",
+      resume: "#", // آدرس رزومه (یا فایل PDF در repo)
+      avatarLetter: "ن" // حرفی که در آواتار نشان داده می‌شود
+    };
+
+    // ====== رندر کردن مقادیر ======
+    document.getElementById('name').textContent = profile.name + " — Founder";
+    document.getElementById('role').textContent = profile.role;
+    document.getElementById('aboutText').textContent = profile.about;
+    document.getElementById('emailLink').href = "mailto:"+profile.email;
+    document.getElementById('emailLink').textContent = "📧 " + profile.email;
+    document.getElementById('phoneLink').href = "tel:"+profile.phone;
+    document.getElementById('phoneLink').textContent = "📞 " + profile.phone;
+    document.getElementById('github').href = profile.github;
+    document.getElementById('linkedin').href = profile.linkedin;
+    document.getElementById('twitter').href = profile.twitter;
+    document.getElementById('cvBtn').href = profile.resume;
+    document.getElementById('avatar').textContent = profile.avatarLetter;
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ====== optional: نمایش دکمه‌های فعال فقط در صورت وجود لینک ======
+    if (!profile.resume || profile.resume === "#") {
+      document.getElementById('cvBtn').style.display = 'none';
+    }
+  </script>
+</body>
 </html>
